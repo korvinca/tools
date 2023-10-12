@@ -1,0 +1,7 @@
+---
+
+- name: Run actions
+  gather_facts: yes
+  hosts: remote-host
+  roles:
+    - { role: actions }

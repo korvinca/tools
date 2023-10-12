@@ -1,0 +1,7 @@
+---
+
+- name: Run tests
+  gather_facts: no
+  hosts: localhost
+  roles:
+    - { role: tests }
