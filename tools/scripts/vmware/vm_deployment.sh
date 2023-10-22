@@ -105,42 +105,16 @@ EOF
 
 function binary_deployment() {
     print_log "================================= Binary deployment ====================================================="
-
     select_source "${IMAGE_URL_NAS}" "${IMAGE_URL_ARTIFACTORY}" && IMAGE_URL="${SELECTED_URL}"
-    
-    print_log "Download Binary image"
+    print_log "Download Binary image on agent"
     ssh ${SSH_TARGET} "cd ${IMAGE_FOLDER} && curl -LO '${IMAGE_URL}'"
-
-    print_log "Set appliance deployment cap"
-    curl -k -X POST https://${VM_NAME}/connector/SetupInfo -d@- << EOF
-    {"Capabilities":[{"Key":"example.meta.appliance.intersightappliance"}],"DeploymentMode":"Private"}
-EOF
-
-    print_log "Activate downloader"
-    curl -k -X PATCH https://${VM_NAME}/connector/SetupInfo -d@- << EOF
-    {
-     "SetupStates": ["download"]
-    }
-EOF
-
+    # print_log "Set appliance deployment cap"
+    # print_log "Activate downloader"
     ## TODO: /connector/HttpProxies
-    print_log "Provide download details"
-    curl -k -X POST https://${VM_NAME}/connector/RemoteFileImport -d@- << EOF
-    {
-     "Protocol":"scp",
-     "RemoteHost":"127.0.0.1",
-     "RemotePort":22,
-     "RemotePath":"${IMAGE_FOLDER}",
-     "Filename":"${BINARY_FILE}",
-     "Username":"${ANSIBLE_USER}",
-     "Password":"${ANSIBLE_PASS}"
-    }
-EOF
-
-    print_log "Waiting for Binary installation to complete."
-    print_log "Waiting 2 hours before check Binary."
-
-    sleep 6000
+    # print_log "Provide download details"
+    # print_log "Waiting for Binary installation to complete."
+    # print_log "Waiting 2 hours before check Binary."
+    # sleep 6000
 
     print_log "Check Binary installation is complete. Period 1 hour."
     waiting_for_portal "${VM_NAME}"
