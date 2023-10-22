@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "female",
+            "name": {
+                "title": "Ms",
+                "first": "Muna",
+                "last": "Birkedal"
+            },
+            "location": {
+                "street": {
+                    "number": 3630,
+                    "name": "Wolffs gate"
+                },
+                "city": "Setermoen",
+                "state": "Nordland",
+                "country": "Norway",
+                "postcode": "9006",
+                "coordinates": {
+                    "latitude": "39.2062",
+                    "longitude": "95.4863"
+                },
+                "timezone": {
+                    "offset": "-4:00",
+                    "description": "Atlantic Time (Canada), Caracas, La Paz"
+                }
+            },
+            "email": "muna.birkedal@example.com",
+            "login": {
+                "uuid": "b1b45fb8-114f-48bb-b0e0-867bdcad1b45",
+                "username": "angryleopard479",
+                "password": "trojans",
+                "salt": "fs8FST8b",
+                "md5": "1de419b9edec7050990c612a5eb7f1f6",
+                "sha1": "4274c405c7b2a714e747f62241d60a5727bb8713",
+                "sha256": "b83cc624918badb963b3965ad127cff99250bbccd5c74a68cea618b3a4749dbd"
+            },
+            "dob": {
+                "date": "1972-11-07T20:07:25.977Z",
+                "age": 50
+            },
+            "registered": {
+                "date": "2016-09-10T17:53:34.690Z",
+                "age": 7
+            },
+            "phone": "76807335",
+            "cell": "96206139",
+            "id": {
+                "name": "FN",
+                "value": "07117214863"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/79.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/79.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/79.jpg"
+            },
+            "nat": "NO"
+        }
+    ],
+    "info": {
+        "seed": "ae7af05662c7ba10",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}

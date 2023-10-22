@@ -1,0 +1,31 @@
+# Two words are anagrams if they have the same letters in a different order, for example, 'stressed' and 'desserts', 'elbow' and 'below'.
+#
+# Design a system that manages anagrams.
+# When queried for a word, the system should return all the words known by the system that are anagrams of the searched word, but not the word itself.
+# If the word the user searched for isn’t known by the system yet, add that word to the list of known words.
+#
+# Implement the function get_anagrams(word).
+
+# Test cases (starting with an empty system).
+# 1. System knows no words, therefore returns an empty list. 'trace' is added to the database.
+# assert get_anagrams('trace') == []
+
+# 2. 'trace' is already in the database, therefore the system returns it. 'cater' is added to the database.
+# assert get_anagrams('cater') == ['trace']
+
+# 3. 'cater' and 'trace' are already in the database. The system returns 'cater'.
+# assert get_anagrams('trace') == ['cater']
+
+# 4. 'cater' and 'trace' are already in the database. The system returns ['cater', 'trace'] and adds 'react'.
+# assert set(get_anagrams('react'))) == set(['cater', 'trace'])
+
+# 5. 'cater', 'trace' and 'react' are already in the database. The system returns ['cater', 'trace', 'react'] and adds 'crate'.
+# assert set(get_anagrams('crate'))) == set(['cater', 'trace', 'react'])
+
+# 6. 'cater', 'trace', 'react' and 'crate' are already in the database. The system returns ['cater', 'trace', 'crate'].
+# assert set(get_anagrams('react'))) == set(['cater', 'trace', 'crate'])
+
+#known_words = ['trace#', 'cater']
+#get_anagrams('react') # --> ['trace', 'cater']
+#new_in = 'cater' #get_anagrams('react') # --> ['trace', 'cater']
+# parcing known_words
