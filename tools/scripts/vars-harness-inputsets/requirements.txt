@@ -1,5 +1,0 @@
-hvac
-pytest
-pyYAML
-requests_toolbelt
-python-dotenv
