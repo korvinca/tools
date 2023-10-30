@@ -18,13 +18,12 @@ res = [0]
 fib1 = 0
 fib2 = 1
 i = 0
-n = 10
-while i < n:
+while i < 10:
     fib_sum = fib1 + fib2
     fib1 = fib2
     fib2 = fib_sum
     i += 1
-    res. append(fib1)
+    res.append(fib1)
 print(res)
 
 # Option 3 recrusia
