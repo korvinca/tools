@@ -9,3 +9,19 @@
     "lease_end_time": 1234567890, # (unix time)
 }
 ```
+
+
+```bash
+#data_yarn.json
+{
+  "$ENV_NAME": {
+    "args": {"": ""},
+    "lease_end_time": $unixtime,
+    "leased": 0,
+    "pool": "$pool",
+    "release": "$release",
+    "release_version": "$release_version",
+    "state": "$state",
+    "type": "$type"
+  }
+}
