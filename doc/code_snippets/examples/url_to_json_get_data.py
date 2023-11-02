@@ -17,12 +17,12 @@ def parcing_url(url):
 def parcing_url_aws(url):
     response = urllib.request.urlopen(url)
     body = response.read().decode("utf-8")
-    data = json.loads(body)
-    # print(data['prefixes'])
+    # data = json.loads(body)
+    print(data['prefixes'])
     for prefix in data['prefixes']:
         print(prefix['ip_prefix'], prefix['region'])
         print("{0}\t{1}".format(prefix['ip_prefix'], prefix['region'])) # with tab
-        print("{0},{1}".format(prefix['ip_prefix'], prefix['region'])) # with tab
+        print("{0}, {1}".format(prefix['ip_prefix'], prefix['region'])) # with tab
 
 # print(parcing_url('https://randomuser.me/api/'))
 # print(parcing_url_aws('https://ip-ranges.amazonaws.com/ip-ranges.json'))
