@@ -1,11 +1,11 @@
 a = ['spam', 'egg', 'bacon', 'tomato', 'ham', 'lobster']
 res = []
-n = 1
+N = 1
 
 for i in a :
-    l = str(a[-n])
-    res.append(l)
-    n += 1
+    # l = str(a[-n])
+    L = a[-N]
+    res.append(L)
+    N += 1
 
 print(res)
-

@@ -2,6 +2,7 @@ def rotate(nums, k):
     i = 0
     while i < k:
         v = nums.pop(len(nums) - 1)
+        print(v)
         nums.insert(0, v)
         i += 1
     return nums

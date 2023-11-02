@@ -11,6 +11,7 @@ class Solution(object):
         # nums.reverse()
         return nums
 
+
 ob = Solution()
 print(ob.reverse([]))
 print(ob.reverse(["h"]))

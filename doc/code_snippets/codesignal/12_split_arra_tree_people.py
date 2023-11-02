@@ -28,7 +28,7 @@ def solution_gpt(a):
     heights = []
     for x in a:
         if x != -1:
-           heights.append(x)
+            heights.append(x)
     heights.sort()
     
     # Initialize an index for the sorted heights list

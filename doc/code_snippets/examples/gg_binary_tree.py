@@ -13,4 +13,3 @@ def maxPathSum(root):
 
 nums = [1, 5, 9, 13, 15, 18]
 print(maxPathSum(nums)) #search
- 

@@ -6,9 +6,7 @@ def rotate(k):
         res = res + str(k[i-1]) + " "
         arr.append(k[i-1])
         i -= 1
-    print(arr)
-    return res
-    
+    return(arr)
 
 print(rotate([1,2,3,4,5,6,7]))
 print(rotate([1,2]))

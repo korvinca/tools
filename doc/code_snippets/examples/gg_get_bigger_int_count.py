@@ -10,7 +10,7 @@ def get_biger_int(arr):
         #         print(arr[item], j)
         #     else:
         #         count += 1
-            
+
         # for next_item in range(count, len(arr)-1):
         
 
