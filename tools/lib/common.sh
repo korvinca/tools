@@ -148,27 +148,24 @@ function waiting_for_portal() {
 }
 
 function __run_on_host_ssh() {
-  # ssh -q -i <path_to_private_ssh_key> <user>@<host> <command>
-  ssh -q -i $1 $2 $3
+    # ssh -q -i <path_to_private_ssh_key> <user>@<host> <command>
+    ssh -q -i $1 $2 $3
 }
 
 function waiting_for_host_ssh() {
-  local period interval i
-
-  period="$1"
-  interval="$2"
-
-  for ((i=0; i<$period; i+=$interval)); do
-    if __run_on_host_ssh $3 $4 "hostname"; then
-      echo "SSH is available on host."
-      return 0
-    fi
+    local period interval i
+    period="$1"
+    interval="$2"
+    for ((i=0; i<$period; i+=$interval)); do
+        if __run_on_host_ssh $3 $4 "hostname"; then
+            echo "SSH is available on host."
+            return 0
+        fi
     echo "Waiting for ssh to be ready..."
     sleep "$interval"
-  done
-
-  echo "Waited for $period seconds, but ssh on host not ready yet."
-  return 1
+    done
+    echo "Waited for $period seconds, but ssh on host not ready yet."
+    return 1
 }
 
 function get_latest_bin_from_artifactory() {
@@ -263,14 +260,14 @@ function keeper_add_secret() {
   "network": "$network"
 }
 EOF
-  cp secret_$ENV_NAME.json data.json
-  __keeper_put_secret "secret/dev/new_project/$ENV_NAME" && rm ./data.json
+    cp secret_$ENV_NAME.json data.json
+    __keeper_put_secret "secret/dev/new_project/$ENV_NAME" && rm ./data.json
 }
 
 function keeper_update_yarn() {
-  rm -rf data.json
-  unixtime=$(date +%s)
-  cat > data_yarn.json << EOF
+    rm -rf data.json
+    unixtime=$(date +%s)
+    cat > data_yarn.json << EOF
 {
   "$ENV_NAME": {
     "args": {"": ""},
@@ -284,9 +281,9 @@ function keeper_update_yarn() {
   }
 }
 EOF
-  __keeper_get_secret "$VAULT_YARN_PATH" && echo $data > ./data.json
-  data=$(jq -s 'add' ./data_yarn.json ./data.json) && echo $data > ./data.json
-  __keeper_put_secret "$VAULT_YARN_PATH" && rm ./data.json
+    __keeper_get_secret "$VAULT_YARN_PATH" && echo $data > ./data.json
+    data=$(jq -s 'add' ./data_yarn.json ./data.json) && echo $data > ./data.json
+    __keeper_put_secret "$VAULT_YARN_PATH" && rm ./data.json
 }
 
 function inject_public_key {
