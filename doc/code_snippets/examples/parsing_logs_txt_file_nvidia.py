@@ -28,6 +28,15 @@ def get_content(l):
     line_con = l.split()
     return str(" ".join(line_con[1:]))
 
+"""
+a = "  hello  apple  "
+b = "  hello  apple  "
+c = "  hello  apple  "
+
+print(a.strip()) # > 'hello  apple'
+print(a.replace(" ", "")) # > 'helloapple'
+print(" ".join(a.split())) # > 'hello  apple'
+"""
 
 def parcing_logs_to_array(logs_txt):
     lines = logs_txt.splitlines()
