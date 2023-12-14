@@ -10,3 +10,11 @@ print(new_string)
 
 new_string = re.sub(r"\b[tT]\w*e\b", "a", string)
 print(new_string)
+
+a = "  hello  apple  " # > 'hello  apple'
+b = "  hello  apple  " # > 'helloapple'
+c = "  hello  apple  "
+
+print(a.strip())
+print(a.replace(" ", ""))
+print(" ".join(a.split()))
