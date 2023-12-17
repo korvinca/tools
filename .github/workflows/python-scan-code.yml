@@ -24,3 +24,24 @@ jobs:
         pip install bandit
     - name: Test code
       run: bandit -ll -ii -r .
+
+    # - name: Build and push Docker image
+    #   id: build-and-push
+    #   uses: docker/build-push-action@v4.0.0
+    #   with:
+    #     context: .
+    #     push: true
+    #     tags: ${{ steps.meta.outputs.tags }}
+    #     labels: ${{ steps.meta.outputs.labels }}
+    #     cache-from: type=gha
+    #     cache-to: type=gha,mode=max
+
+    # - name: Docker Scout
+    # id: docker-scout
+    # uses: docker/scout-action@v1
+    # with:
+    #   command: cves,recommendations,compare
+    #   to-latest: true
+    #   ignore-base: true
+    #   ignore-unchanged: true
+    #   only-fixed: true
