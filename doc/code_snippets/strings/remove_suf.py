@@ -3,6 +3,7 @@
 
 #1. remove "nd" or "ss" or "ing" from end of the word
 #2. if word > 8, cut it to 8
+#3. upper letters
 
 def stemmer(text):
     text = text.split()
@@ -17,8 +18,8 @@ def stemmer(text):
         if len(word) > 8:
             word = word[:8]
         new_list.append(word)
-    # print(str(new_list))
     res = " ".join(new_list)
+    res = res.upper()
     return res
 
 
