@@ -9,9 +9,9 @@ array.sort()
 #     print(array[i])
 
 # v = array.pop(len(array) - 1) # delete last
-# array.insert(0, v) # insert to thre first
+# array.insert(0, v) # insert to the first
 # array.append(v) # append to the end of array
-# result = ''.join(v)
+# result = ' '.join(v)
 # print("Result: ", result, end=" ", "\n")
 # print(array[0]) #a
 # print(array[:1]) #['a']
@@ -19,7 +19,7 @@ array.sort()
 # print(array[1:]) #['b', 'c']
 # print(array[-2:]) #['b', 'c']
 reversed_words = array[::-1]  # Reverse the list of words
-reversed_sentence = ''.join(reversed_words)  # Join the reversed words back into a string
+reversed_sentence = ' '.join(reversed_words)  # Join the reversed words back into a string
 
 # for i in array_d:
 #     pos_inx = array_d.index(i)

@@ -1,5 +1,5 @@
 if __name__ == '__main__':
-    name_dict = {}
+    # name_dict = {}
     res_list = []
     # for _ in range(int(input())):
     #     name = input()
