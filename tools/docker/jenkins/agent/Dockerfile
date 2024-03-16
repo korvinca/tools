@@ -1,11 +1,11 @@
 FROM jenkins/ssh-agent:debian-jdk17
 
-RUN sh -c "echo \"jenkins ALL=(ALL:ALL) NOPASSWD: ALL\" >> /etc/sudoers"
-
 RUN apt-get update \
     && apt-get install -y sudo curl git unzip wget \
     && apt-get clean \
     && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+
+RUN sh -c "echo \"jenkins ALL=(ALL:ALL) NOPASSWD: ALL\" >> /etc/sudoers"
 
 # # Install Terraform
 # RUN apt-get update \
